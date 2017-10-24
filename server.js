@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 // var path = require("path");
 
 var htmlRoutes = require("./routes/htmlRoutes.js")
+var apiRoutes = require("./routes/apiRoutes.js")
 
 // Sets up the Express App
 // =============================================================
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 htmlRoutes(app);
+apiRoutes(app);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

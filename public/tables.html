@@ -55,13 +55,31 @@
             newTables.attr("id", "tableSection-" + i + 1);
             $("#currentTables").append(newTables);
             var reservationNumber = i + 1
-            $("tableSection-"+ i + 1).append("<h3><span class='label label-default'>" + reservationNumber + "</span> |" + tableData[i].uniqueID + "</h3>" );          
+            $("#tableSection-"+ i + 1).append("<h3><span class='label label-default'>" + reservationNumber + "</span> |" + tableData[i].uniqueID + "</h3>" );          
+          }
+        });
+      }
+
+    function loadWaitlist(){
+
+      var url = window.location.origin;
+
+        $.ajax({url: url + "/api/waitlist", method: "GET"})
+        .done(function(waitlistData){
+          console.log(waitlistData);
+          for (var i=0; i<waitlistData.length; i++) {
+            var newWaitlist = $("<div>");
+            newWaitlist.addClass("well");
+            newWaitlist.attr("id", "waitlistSection-" + i + 1);
+            $("#currentWaitlist").append(newWaitlist);
+            var reservationNumber = i + 1
+            $("#waitlistSection-"+ i + 1).append("<h3><span class='label label-default'>" + reservationNumber + "</span> |" + waitlistData[i].uniqueID + "</h3>" );          
           }
         });
       }
 
 
-
+  loadWaitlist();    
   loadTables();
    
 

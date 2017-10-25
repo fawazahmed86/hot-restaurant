@@ -32,7 +32,6 @@ function apiRoutes(app){
 
     console.log("data store", tableData, waitListData);
   });
-
 }
 
 

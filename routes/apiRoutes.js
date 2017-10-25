@@ -12,9 +12,9 @@ function apiRoutes(app){
     res.json(waitListData);
   });
 
-  app.post("api/tables", function(req, res){
+  app.post("/api/tables", function(req, res){
     var newTableData = req.body;
-    console.log(newTable);
+    console.log(newTableData);
 
     if(tableData.length < 5){
       tableData.push(tableData);

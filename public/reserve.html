@@ -3,13 +3,14 @@
 <head>
   <title>Reservation</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <div class ="container">
     <div class = "row">
     <div class="jumbotron text-center">
       <h1><span class="glyphicon glyphicon-fire"></span>HOT RESTAURANT</h1>
-      <p>__________________________________________________________________________</p>
+      <hr>
       <p>Make Your Reservation</p>
       <p><a type = "submit" class="btn btn-primary btn-lg" href="/tables" role="button"><span class="glyphicon glyphicon-list-alt"></span> View Tables</a><span> </span><a class="btn btn-primary btn-lg" href="/" role="button"><span class="glyphicon glyphicon-home"></span></a></p>
     </div>
@@ -21,11 +22,11 @@
           <form>
             <div class="form-group">
               <label id="newName" for="exampleInputEmail1">Name:</label>
-              <input name ="name" type="email" class="form-control" id="name">
+              <input name ="name" class="form-control" id="name">
             </div>
             <div class="form-group">
               <label id="newName" for="exampleInputEmail1">Phone Number</label>
-              <input name ="name" type="email" class="form-control" id="number">
+              <input name ="name" class="form-control" id="number">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email:</label>
@@ -33,9 +34,9 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Unique ID:</label>
-              <input name="uniqueID" type="email" class="form-control" id="id">
+              <input name="uniqueID" class="form-control" id="id">
             </div>
-           <button type ="submit" class="btn btn-primary btn-lg" href="#" role="button"><span class="glyphicon glyphicon-list-alt"></span> Submit</button>
+           <button type ="submit" id="submit" class="btn btn-primary submit" role="button"><span class="glyphicon glyphicon-list-alt"></span> Submit</button>
           </form>                
         </div>
 
@@ -50,7 +51,28 @@
   
   </div>
 
+<script type="text/javascript">
+  
+$(".submit").on("click", function(event){
+    event.preventDefault();
 
+   var reservation = {
+    name: $("#name").val().trim(),
+    number: $("#number").val().trim(),
+    email: $("#email").val().trim(),
+    uniqueID: $("#id").val().trim(),
+   };
+
+   console.log(reservation);  
+
+
+
+})
+
+
+</script>
+
+  
 
 
 

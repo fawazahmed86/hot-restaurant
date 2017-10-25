@@ -1,6 +1,6 @@
 var path = require("path");
-var tableData = require("tableData");
-var waitListData = require("waitListData");
+var tableData = require("../data/tableData");
+var waitListData = require("../data/waitListData");
 
 function apiRoutes(app){
 

@@ -35,7 +35,7 @@
 
     <div class = "row">
       <div class="col-md-4">
-        <p><a href="/api/tables">API Tables</a> | <a href="api/waitlist">API Waitlist
+        <p><a href="/api/tables">API Tables</a> | <a href="api/waitlist">API Waitlist</a> | <a href="#" id="clear">Clear Table</a>
       </div>  
     </div>
   
@@ -77,6 +77,23 @@
           }
         });
       }
+
+    function clearTable() {
+
+      var currentURL = window.location.origin;
+      console.log(currentURL)
+      $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+
+    }
+
+    $("#clear").on("click", function() {
+      alert("Clearing...");
+      clearTable();
+
+      // Refresh the page after data is cleared
+      location.reload();
+
+    });
 
 
   loadWaitlist();    

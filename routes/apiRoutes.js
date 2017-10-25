@@ -17,7 +17,7 @@ function apiRoutes(app){
     console.log(newTableData);
 
     if(tableData.length < 5){
-      tableData.push(tableData);
+      tableData.push(newTableData);
       res.json(true);
     }
     else{

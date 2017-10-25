@@ -1,1 +1,3 @@
- var waitList = [];
+ var waitListData = [];
+
+ module.exports = waitListData;

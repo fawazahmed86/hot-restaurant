@@ -26,7 +26,7 @@ function apiRoutes(app){
     }
   });
 
-  app.post("api/clear", function(req, res){
+  app.post("/api/clear", function(req, res){
     tableData = [];
     waitListData = [];
 

@@ -25,6 +25,14 @@ function apiRoutes(app){
       res.json(false);
     }
   });
+
+  app.post("api/clear", function(req, res){
+    tableData = [];
+    waitListData = [];
+
+    console.log("data store", tableData, waitListData);
+  });
+
 }
 
 
